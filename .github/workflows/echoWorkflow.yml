@@ -1,0 +1,19 @@
+name: Echo Current Date
+
+on:
+  push:        # Runs on every push
+    branches:
+      - '**'   # All branches
+
+jobs:
+  echo-date:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Print current date
+        run: |
+          echo "Current date and time:"
+          date 
